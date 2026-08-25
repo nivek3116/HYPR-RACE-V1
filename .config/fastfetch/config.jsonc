@@ -1,0 +1,96 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+    // LOGO
+
+    "logo": {
+        "source": "/home/nivek/.config/waybar/scripts/spiderman_clean_white.png",
+        "type": "kitty-direct",
+        "height": 11,
+        "width": 18,
+        "preserveAspectRatio": true,
+        "padding": {
+            "top": 1,
+            "right": 3
+        }
+    },
+
+    // PANTALLA Y SEPARADORES
+
+    "display": {
+        "separator": " 󰅂 ",
+        "color": {
+            "keys": "bright_white",
+            "title": "bright_white",
+            "separator": "bright_black"
+        }
+    },
+
+    // MODULOS DE INFORMACION
+
+    "modules": [
+        {
+            "type": "title",
+            "color": {
+                "user": "bright_white",
+                "at": "bright_black",
+                "host": "white"
+            }
+        },
+        {
+            "type": "separator",
+            "string": "─"
+        },
+        {
+            "type": "os",
+            "key": "󰣇 OS",
+            "keyColor": "bright_white"
+        },
+        {
+            "type": "kernel",
+            "key": " Kernel",
+            "keyColor": "bright_white"
+        },
+        {
+            "type": "packages",
+            "key": "󰏖 Paquetes",
+            "keyColor": "bright_white"
+        },
+        {
+            "type": "shell",
+            "key": " Shell",
+            "keyColor": "bright_white"
+        },
+        {
+            "type": "wm",
+            "key": "󱂬 WM",
+            "keyColor": "bright_white"
+        },
+        {
+            "type": "terminal",
+            "key": " Terminal",
+            "keyColor": "bright_white"
+        },
+        {
+            "type": "cpu",
+            "key": "󰍛 CPU",
+            "keyColor": "bright_white"
+        },
+        {
+            "type": "memory",
+            "key": "󰘚 RAM",
+            "keyColor": "bright_white"
+        },
+        {
+            "type": "disk",
+            "key": "󰋊 Disco",
+            "keyColor": "bright_white"
+        },
+        "break",
+        {
+            "type": "colors",
+            "paddingLeft": 2,
+            "symbol": "circle"
+        }
+    ]
+}

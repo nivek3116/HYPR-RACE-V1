@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Dark-Glass
+Comment=Dark Glass Frosted GTK Theme (50% Opacity)
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Dark-Glass
+MetacityTheme=Dark-Glass
+IconTheme=Papirus-Dark
+CursorTheme=default
+ButtonLayout=close,minimize,maximize:menu

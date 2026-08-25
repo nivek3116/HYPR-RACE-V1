@@ -1,0 +1,90 @@
+/* VARIABLES Y COLORES SINCRONIZADOS CON WAYBAR (0.50) */
+
+* {
+    bg:              rgba(0, 0, 0, 0.50);
+    bg-selected:     rgba(255, 255, 255, 0.15);
+    text:            #FFFFFF;
+    text-dim:        #94A3B8;
+    accent:          #FFFFFF;
+    border-col:      rgba(255, 255, 255, 0.15);
+
+    background-color: transparent;
+    text-color:       @text;
+    font:             "MonaspiceNe Nerd Font 12";
+}
+
+/* VENTANA */
+
+window {
+    transparency:     "real";
+    location:         northeast;
+    anchor:           northeast;
+    x-offset:         -12px;
+    y-offset:         46px;
+    width:            380px;
+    background-color: @bg;
+    border:           0px;
+    border-radius:    14px;
+    padding:          12px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+mainbox {
+    children:         [ inputbar, listview ];
+    spacing:          8px;
+}
+
+/* BARRA DE BUSQUEDA */
+
+inputbar {
+    enabled:          true;
+    padding:          8px 12px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border:           0px;
+    border-radius:    10px;
+    children:         [ prompt, entry ];
+    spacing:          6px;
+}
+
+prompt {
+    text-color:       @accent;
+    font:             "MonaspiceNe Nerd Font Bold 12";
+}
+
+entry {
+    placeholder:       "Buscar...";
+    placeholder-color: @text-dim;
+    text-color:        @text;
+}
+
+/* LISTA */
+
+listview {
+    lines:            8;
+    columns:          1;
+    scrollbar:        false;
+    spacing:          4px;
+    dynamic:          true;
+    cycle:            true;
+}
+
+/* ELEMENTOS */
+
+element {
+    padding:          8px 12px;
+    border-radius:    8px;
+    text-color:       @text;
+    children:         [ element-text ];
+}
+
+element selected {
+    background-color: @bg-selected;
+    text-color:       #FFFFFF;
+    border:           1px;
+    border-color:     rgba(255, 255, 255, 0.25);
+}
+
+element-text {
+    text-color:       inherit;
+}

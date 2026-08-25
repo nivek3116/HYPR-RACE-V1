@@ -1,0 +1,112 @@
+/* ==============================================================================
+ * Rofi Wallpaper Selector Theme - Minimalist Modern Dock
+ * Optimizado para Hyprland / Wayland
+ * ============================================================================== */
+
+configuration {
+    show-icons:           true;
+
+    /* Desactivar bindings por defecto en conflicto */
+    kb-row-up:            "";
+    kb-row-down:          "";
+    kb-element-prev:      "";
+    kb-element-next:      "";
+    kb-delete-entry:      "";
+    kb-move-char-back:    "";
+    kb-move-char-forward: "";
+    kb-remove-char-back:  "BackSpace";
+    kb-remove-to-eol:     "";
+    kb-mode-complete:     "";
+
+    /* Moverse entre tarjetas horizontalmente (Izquierda / Derecha o h / l) */
+    kb-row-left:          "Left,h";
+    kb-row-right:         "Right,l";
+
+    /* Cambiar de categoría (Estáticos <-> Animados) */
+    kb-mode-next:         "Tab,Down,j";
+    kb-mode-previous:     "ISO_Left_Tab,Up,k";
+
+    /* Aceptar / Cancelar */
+    kb-accept-entry:      "Return,KP_Enter";
+    kb-cancel:            "Escape,Control+bracketleft";
+
+    /* Eliminar fondo a la papelera (RETV=10 o RETV=3) */
+    kb-custom-1:          "Shift+Delete,Alt+Delete,Alt+BackSpace";
+
+    hover-select:         true;
+    me-select-entry:      "";
+    me-accept-entry:      "MousePrimary";
+}
+
+/* VARIABLES GLOBALES */
+* {
+    background-color:     transparent;
+    text-color:           #FFFFFF;
+    font:                 "JetBrainsMono Nerd Font 10";
+}
+
+/* VENTANA FLOTANTE DOCK INFERIOR */
+window {
+    transparency:         "real";
+    location:             south;
+    anchor:               south;
+    y-offset:             -30px;
+    height:               250px;
+    background-color:     transparent;
+    border:               0px;
+    padding:              0px;
+    margin:               0px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+mainbox {
+    orientation:          horizontal;
+    expand:               false;
+    background-color:     transparent;
+    children:             [ listview ];
+    padding:              0px;
+    margin:               0px;
+}
+
+/* LISTA HORIZONTAL DE FONDOS */
+listview {
+    layout:               horizontal;
+    lines:                7;
+    spacing:              14px;
+    background-color:     transparent;
+    border:               0px;
+    padding:              55px 38px;
+    margin:               0px;
+    cycle:                true;
+    dynamic:              false;
+}
+
+/* TARJETAS DE FONDO INDIVIDUALES */
+element {
+    background-color:     rgba(255, 255, 255, 0.04);
+    border:               2px solid;
+    border-color:         rgba(255, 255, 255, 0.12);
+    border-radius:        14px;
+    padding:              3px;
+    children:             [ element-icon ];
+    cursor:               pointer;
+}
+
+element selected {
+    background-color:     rgba(255, 255, 255, 0.16);
+    border-color:         rgba(255, 255, 255, 0.95);
+}
+
+/* MINIATURA 16:9 RECORTADA */
+element-icon {
+    size:                 240px;
+    margin:               -52px 0px -52px 0px;
+    background-color:     transparent;
+    horizontal-align:     0.5;
+    vertical-align:       0.5;
+    border-radius:        10px;
+}
+
+element-text {
+    enabled:              false;
+}

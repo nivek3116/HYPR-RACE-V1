@@ -1,0 +1,17 @@
+========================================
+         H Y P R - R I C E
+========================================
+        Creado por: nivek
+========================================
+
+Antes de ejecutar install.sh, asegúrate de instalar las siguientes dependencias.
+
+Para los paquetes oficiales, copia y pega esto en tu terminal:
+
+sudo pacman -S --needed hyprland hypridle hyprlock waybar rofi swaync swayosd kitty fastfetch btop cava udiskie polkit-gnome gnome-keyring cliphist wl-clipboard hyprsunset swappy pavucontrol blueman playerctl python-gobject gtk-layer-shell ffmpeg imagemagick awww kvantum qt5ct qt6ct nwg-look nwg-displays papirus-icon-theme ttf-jetbrains-mono-nerd inter-font otf-monaspace-nerd grim slurp gpu-screen-recorder brightnessctl firefox thunar thunar-archive-plugin thunar-volman gvfs file-roller tumbler ffmpegthumbnailer xdg-desktop-portal-hyprland xdg-desktop-portal-gtk qt5-wayland qt6-wayland nm-connection-editor network-manager-applet bluez-utils pipewire-pulse libnotify lm_sensors upower
+
+Para los paquetes en AUR, ejecuta:
+
+yay -S --needed mpvpaper ttf-poppins
+
+Una vez instalados, puedes ejecutar ./install.sh

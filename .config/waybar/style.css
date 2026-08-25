@@ -1,0 +1,224 @@
+/* ========================================================== */
+/* COLORES                                                    */
+/* ========================================================== */
+@define-color bg rgba(0, 0, 0, 0.50);
+@define-color border-bottom-color rgba(255, 255, 255, 0.85);
+@define-color fg #ffffff;
+@define-color inactive rgba(255, 255, 255, 0.35);
+@define-color tooltip-bg rgba(0, 0, 0, 0.90);
+
+/* ========================================================== */
+/* BASE                                                       */
+/* ========================================================== */
+* {
+    font-family: 'Inter', 'MonaspiceNe Nerd Font', 'JetBrains Mono Nerd Font', sans-serif;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+window#waybar,
+#waybar,
+label,
+button {
+    font-family: 'Inter', 'MonaspiceNe Nerd Font', 'JetBrains Mono Nerd Font', sans-serif;
+}
+
+/* ========================================================== */
+/* BARRA                                                      */
+/* ========================================================== */
+#waybar {
+    font-weight: 700;
+    font-size: 14.5px;
+    background: transparent;
+    color: @fg;
+    border-radius: 50px;
+    padding: 0 1rem;
+    font-feature-settings: "tnum 1, lnum 1";
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    margin-bottom: -0.625rem;
+    margin-left: 0.625rem;
+    margin-right: 0.625rem;
+    padding: 0.625rem;
+}
+
+/* ========================================================== */
+/* CAPSULAS                                                   */
+/* ========================================================== */
+#custom-arch,
+#workspaces,
+#custom-player,
+#clock,
+#connectivity,
+#temperature,
+#battery,
+#tray,
+#custom-idle.activated,
+#custom-notification {
+    padding: 0.25rem 0.85rem;
+    border-bottom: 0.22rem solid @border-bottom-color;
+    border-radius: 50px;
+    background: @bg;
+    color: @fg;
+    margin: 0 0.35rem;
+    transition: all 0.2s ease;
+}
+
+#custom-idle.deactivated {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+}
+
+/* ========================================================== */
+/* MODULOS ESPECIFICOS                                        */
+/* ========================================================== */
+#custom-arch { font-size: 16px; min-width: 38px; padding: 0.25rem 0; }
+#battery { font-weight: 600; font-size: 13.5px; padding: 0.25rem 0.85rem; }
+#custom-player { font-weight: 600; font-size: 13.5px; padding: 0.25rem 0.95rem; }
+#clock { font-weight: 700; padding: 0.25rem 1.45rem; }
+#temperature { font-weight: 600; font-size: 14.5px; padding: 0.25rem 0.95rem; }
+#custom-notification { font-size: 16px; min-width: 38px; padding: 0.25rem 0; }
+#custom-idle.activated { font-size: 16px; min-width: 38px; padding: 0.25rem 0; }
+
+/* ========================================================== */
+/* CONECTIVIDAD                                               */
+/* ========================================================== */
+#connectivity {
+    padding: 0.25rem 0.9rem;
+}
+
+#connectivity #network,
+#connectivity #bluetooth {
+    background: transparent;
+    border: none;
+    margin: 0 0.15rem;
+    padding: 0.05rem 0.5rem;
+    font-size: 16px;
+}
+
+/* ========================================================== */
+/* WORKSPACES                                                 */
+/* ========================================================== */
+#workspaces {
+    padding: 0.25rem 0.5rem;
+}
+
+#workspaces button {
+    color: @inactive;
+    font-size: 14.5px;
+    border-radius: 50px;
+    margin: 0 0.25rem;
+    padding: 0 0.45rem;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+#workspaces button:hover { color: @fg; }
+#workspaces button.active { color: @fg; font-weight: 800; }
+#workspaces button.urgent { color: @fg; }
+
+/* ========================================================== */
+/* BANDEJA                                                    */
+/* ========================================================== */
+#tray {
+    padding: 0.25rem 0.85rem;
+}
+#tray > .passive { -gtk-icon-effect: dim; }
+#tray > .needs-attention { -gtk-icon-effect: highlight; }
+
+/* ========================================================== */
+/* MENUS                                                      */
+/* ========================================================== */
+menu {
+    background: rgba(15, 15, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 6px;
+    color: @fg;
+}
+
+menu menuitem {
+    background: transparent;
+    padding: 4px 10px;
+    border-radius: 6px;
+    color: @fg;
+    transition: all 0.2s ease;
+}
+
+menu menuitem:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* ========================================================== */
+/* ESTADOS                                                    */
+/* ========================================================== */
+#network.disconnected, #bluetooth.disabled, #bluetooth.off { color: @inactive; }
+#temperature.critical { color: #ef4444; }
+#battery.charging, #battery.plugged { color: #22c55e; }
+#battery.warning:not(.charging) { color: #f59e0b; }
+#battery.critical:not(.charging) {
+    color: #ef4444;
+    animation: blink_rec 1.5s ease-in-out infinite;
+}
+
+/* ========================================================== */
+/* TOOLTIPS                                                   */
+/* ========================================================== */
+tooltip {
+    padding: 0.5rem;
+    border-radius: 12px;
+    background: @tooltip-bg;
+    border: 1px solid @fg;
+}
+
+tooltip label {
+    padding: 0.5rem;
+    font-weight: bold;
+    color: @fg;
+}
+
+/* ========================================================== */
+/* GRABADOR DE PANTALLA (REC)                                 */
+/* ========================================================== */
+#custom-recorder {
+    color: #ef4444;
+    padding: 0 4px;
+    font-weight: 800;
+}
+
+#custom-recorder.recording {
+    color: #ffffff;
+    background-color: rgba(239, 68, 68, 0.85);
+    border-radius: 50px;
+    padding: 2px 12px;
+    margin: 4px 6px;
+    animation: blink_rec 1.5s ease-in-out infinite;
+}
+
+@keyframes blink_rec {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.40; }
+    100% { opacity: 1.0; }
+}
+
+/* ========================================================== */
+/* REPRODUCTOR MULTIMEDIA EN PAUSA                            */
+/* ========================================================== */
+#custom-player.paused {
+    opacity: 0.50;
+}

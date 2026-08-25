@@ -1,0 +1,4 @@
+program_options:
+  file_manager: thunar
+  automount: true
+  notify: true

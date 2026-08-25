@@ -1,0 +1,351 @@
+/* =========================================================
+   DARK-GLASS GTK 4.0 & LIBADWAITA (STANDALONE FROSTED GLASS)
+   ========================================================= */
+
+/* 1. GTK4 & Libadwaita Color Variables */
+@define-color window_bg_color rgba(0, 0, 0, 0.50);
+@define-color window_fg_color #ffffff;
+@define-color view_bg_color rgba(0, 0, 0, 0.50);
+@define-color view_fg_color #ffffff;
+@define-color headerbar_bg_color transparent;
+@define-color headerbar_fg_color #ffffff;
+@define-color headerbar_backdrop_color transparent;
+@define-color card_bg_color rgba(255, 255, 255, 0.06);
+@define-color card_fg_color #ffffff;
+@define-color dialog_bg_color rgba(0, 0, 0, 0.50);
+@define-color dialog_fg_color #ffffff;
+@define-color popover_bg_color rgba(15, 15, 20, 0.95);
+@define-color popover_fg_color #ffffff;
+@define-color shade_color rgba(0, 0, 0, 0.50);
+@define-color scrollbar_outline_color transparent;
+@define-color accent_color rgba(255, 255, 255, 0.20);
+@define-color accent_bg_color rgba(255, 255, 255, 0.20);
+@define-color accent_fg_color #ffffff;
+@define-color theme_bg_color rgba(0, 0, 0, 0.50);
+@define-color theme_base_color rgba(0, 0, 0, 0.50);
+@define-color theme_fg_color #ffffff;
+@define-color borders rgba(255, 255, 255, 0.08);
+
+/* 2. Global Typography */
+* {
+    font-family: 'Poppins', 'JetBrains Mono Nerd Font', 'MonaspiceNe Nerd Font', sans-serif;
+}
+
+/* Monospace overrides for terminals & code views */
+.monospace,
+textview.monospace {
+    font-family: 'JetBrains Mono Nerd Font', 'MonaspiceNe Nerd Font', monospace;
+}
+
+/* 3. Base Window & Dialogs - 50% Translucent Black (Active & Backdrop) */
+window,
+window:backdrop,
+window.background,
+window.background:backdrop,
+.background,
+.background:backdrop,
+dialog,
+dialog:backdrop,
+messagedialog,
+messagedialog:backdrop,
+.dialog,
+.dialog:backdrop,
+.message-dialog,
+.message-dialog:backdrop,
+navigation-view,
+navigation-view:backdrop,
+split-view,
+split-view:backdrop,
+leaflet,
+leaflet:backdrop,
+flap,
+flap:backdrop {
+    background-color: rgba(0, 0, 0, 0.50);
+    background-image: none;
+    color: #ffffff;
+    border: none;
+    box-shadow: none;
+}
+
+/* Reset sub-containers inside Dialogs & Message boxes so no gray/white blocks appear */
+dialog box,
+dialog box:backdrop,
+messagedialog box,
+messagedialog box:backdrop,
+dialog content,
+dialog content:backdrop {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* 4. Top Headerbars & Window Title - 100% Transparent */
+headerbar,
+headerbar:backdrop,
+headerbar.titlebar,
+headerbar.titlebar:backdrop,
+.titlebar,
+.titlebar:backdrop,
+windowtitle,
+windowtitle:backdrop,
+actionbar,
+actionbar:backdrop {
+    background-color: transparent;
+    background-image: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+    color: #ffffff;
+}
+
+/* 5. Containers, Boxes, Grids, Panes, Notebooks & Stacks */
+box,
+box:backdrop,
+grid,
+grid:backdrop,
+paned,
+paned:backdrop,
+paned > separator,
+paned > separator:backdrop,
+notebook,
+notebook:backdrop,
+notebook > header,
+notebook > header:backdrop,
+notebook > stack,
+notebook > stack:backdrop,
+stack,
+stack:backdrop {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+}
+
+/* 6. Content Views & Lists */
+.view,
+.view:backdrop,
+listview,
+listview:backdrop,
+columnview,
+columnview:backdrop,
+gridview,
+gridview:backdrop,
+scrolledwindow,
+scrolledwindow:backdrop,
+viewport,
+viewport:backdrop,
+list,
+list:backdrop,
+row,
+row:backdrop {
+    background-color: transparent;
+    background-image: none;
+    color: #ffffff;
+}
+
+/* 7. Rubberband (Multi-select box) */
+rubberband,
+rubberband:backdrop,
+.rubberband,
+.rubberband:backdrop,
+flowbox rubberband {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 6px;
+}
+
+/* 8. Selection & Hover States */
+.view:hover,
+row:hover,
+listview > row:hover,
+columnview > row:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+}
+
+.view:selected,
+row:selected,
+listview > row:selected,
+columnview > row:selected,
+tab:selected {
+    background-color: rgba(255, 255, 255, 0.20);
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+.view:selected:backdrop,
+row:selected:backdrop,
+listview > row:selected:backdrop,
+columnview > row:selected:backdrop,
+tab:selected:backdrop {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+/* 9. Buttons */
+button {
+    background-image: none;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+button:backdrop {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #cbd5e1;
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+button:hover * {
+    color: #000000;
+}
+
+button:active,
+button:checked {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+button:active *,
+button:checked * {
+    color: #000000;
+}
+
+/* 10. Text Entries */
+entry {
+    background-image: none;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 6px 10px;
+    box-shadow: none;
+}
+
+entry:backdrop {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #cbd5e1;
+}
+
+entry:focus {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* 11. Tabs */
+notebook > header tabs tab,
+notebook tab,
+tab-bar tab,
+tab {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 8px 8px 0 0;
+    margin: 0 2px;
+    padding: 6px 12px;
+    border: none;
+    color: #cbd5e1;
+    transition: all 0.2s ease;
+}
+
+notebook > header tabs tab:backdrop,
+notebook tab:backdrop,
+tab-bar tab:backdrop,
+tab:backdrop {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #94a3b8;
+}
+
+notebook > header tabs tab:hover,
+notebook tab:hover,
+tab:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+}
+
+notebook > header tabs tab:checked,
+notebook tab:checked {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 700;
+}
+
+notebook > header tabs tab:checked:backdrop,
+notebook tab:checked:backdrop {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #000000;
+}
+
+/* 12. Volume Sliders & Progressbars */
+scale trough,
+scale trough:backdrop {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    min-height: 4px;
+    border: none;
+}
+
+scale highlight,
+scale highlight:backdrop {
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+scale slider,
+scale slider:backdrop {
+    background-color: #ffffff;
+    border-radius: 50%;
+    min-width: 14px;
+    min-height: 14px;
+    border: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+progressbar trough,
+progressbar trough:backdrop {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    min-height: 6px;
+    border: none;
+}
+
+progressbar progress,
+progressbar progress:backdrop {
+    background-color: #ffffff;
+    border-radius: 6px;
+    min-height: 6px;
+    border: none;
+}
+
+/* 13. Context Menus & Popovers */
+popover,
+popover:backdrop,
+.popover,
+.popover:backdrop,
+popover.menu {
+    background-color: rgba(15, 15, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 6px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+}
+
+popover menuitem,
+popover modelbutton {
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #ffffff;
+    transition: all 0.15s ease;
+}
+
+popover menuitem:hover,
+popover modelbutton:hover {
+    background-color: #ffffff;
+    color: #000000;
+}

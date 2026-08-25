@@ -1,0 +1,15 @@
+[Unit]
+Description=Hyprland USB Device Sound Daemon
+After=pipewire.service wireplumber.service
+Wants=pipewire.service wireplumber.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/bash /home/nivek/.config/hypr/scripts/usb-sound.sh
+Restart=always
+RestartSec=1s
+Environment=PATH=/home/nivek/.local/bin:/usr/local/bin:/usr/bin:/bin
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+
+[Install]
+WantedBy=default.target

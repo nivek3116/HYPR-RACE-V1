@@ -1,0 +1,112 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "ignore-gtk-theme": true,
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "layer-shell-cover-screen": true,
+  "cssPriority": "user",
+  "control-center-margin-top": 14,
+  "control-center-margin-bottom": 14,
+  "control-center-margin-right": 14,
+  "control-center-margin-left": 0,
+  "notification-2fa-action": true,
+  "notification-inline-replies": false,
+  "notification-body-image-height": 54,
+  "notification-body-image-width": 54,
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+  "fit-to-screen": true,
+  "relative-timestamps": true,
+  "control-center-width": 380,
+  "control-center-height": -1,
+  "notification-window-width": 380,
+  "keyboard-shortcuts": true,
+  "notification-grouping": false,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "text-empty": "No hay notificaciones",
+  "scripts": {
+    "battery-silence": {
+      "exec": "true",
+      "app-name": "^Batería$",
+      "run-on": "receive"
+    },
+    "udiskie-silence": {
+      "exec": "true",
+      "app-name": "(?i)^udiskie.*",
+      "run-on": "receive"
+    },
+    "default-sound": {
+      "exec": "/home/nivek/.config/swaync/scripts/play-notif-sound.sh",
+      "app-name": ".*",
+      "run-on": "receive"
+    }
+  },
+  "widgets": [
+    "title#cc",
+    "buttons-grid",
+    "volume",
+    "backlight",
+    "title#notif",
+    "notifications"
+  ],
+  "widget-config": {
+    "title#cc": {
+      "text": "Centro de Control",
+      "clear-all-button": false
+    },
+    "buttons-grid": {
+      "buttons-per-row": 4,
+      "actions": [
+        {
+          "label": "󰄀",
+          "command": "/home/nivek/.config/hypr/scripts/screenshot.sh full"
+        },
+        {
+          "label": "󰈈",
+          "type": "toggle",
+          "active": false,
+          "command": "/home/nivek/.config/hypr/scripts/idle-toggle.sh",
+          "update-command": "sleep 0.1; sh -c '[ -f /tmp/hypr_caffeine_active ] && echo true || echo false'"
+        },
+        {
+          "label": "󰂛",
+          "type": "toggle",
+          "active": false,
+          "command": "sh -c 'if [ \"$SWAYNC_TOGGLE_STATE\" = \"true\" ]; then touch /tmp/swaync_dnd_active; swaync-client -dn -sw; else rm -f /tmp/swaync_dnd_active; swaync-client -df -sw; fi'",
+          "update-command": "sh -c '[ -f /tmp/swaync_dnd_active ] && echo true || echo false'"
+        },
+        {
+          "label": "󰖔",
+          "type": "toggle",
+          "active": false,
+          "command": "/home/nivek/.config/hypr/scripts/nightlight.sh",
+          "update-command": "sleep 0.1; sh -c '(pgrep -x hyprsunset >/dev/null || pgrep -x wlsunset >/dev/null) && echo true || echo false'"
+        }
+      ]
+    },
+    "volume": {
+      "label": "󰕾",
+      "show-per-app": false
+    },
+    "backlight": {
+      "label": "󰃟",
+      "device": "intel_backlight",
+      "min": 5
+    },
+    "title#notif": {
+      "text": "Notificaciones",
+      "clear-all-button": true,
+      "button-text": "󰆴 Limpiar"
+    },
+    "notifications": {
+      "vexpand": true
+    }
+  }
+}

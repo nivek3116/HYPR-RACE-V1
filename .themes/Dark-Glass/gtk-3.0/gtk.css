@@ -1,0 +1,501 @@
+/* =========================================================
+   DARK-GLASS GTK 3.0 (STANDALONE FROSTED GLASS THEME)
+   ========================================================= */
+
+/* 1. Internal Dark Base (No external dependencies) */
+@import url("resource:///org/gtk/libgtk/theme/Adwaita/gtk-contained-dark.css");
+
+/* 2. Color Palette Variables */
+@define-color theme_fg_color #ffffff;
+@define-color theme_text_color #ffffff;
+@define-color theme_bg_color rgba(0, 0, 0, 0.50);
+@define-color theme_base_color rgba(0, 0, 0, 0.50);
+@define-color theme_selected_bg_color rgba(255, 255, 255, 0.20);
+@define-color theme_selected_fg_color #ffffff;
+@define-color theme_unfocused_fg_color #ffffff;
+@define-color theme_unfocused_text_color #ffffff;
+@define-color theme_unfocused_bg_color rgba(0, 0, 0, 0.50);
+@define-color theme_unfocused_base_color rgba(0, 0, 0, 0.50);
+@define-color theme_unfocused_selected_bg_color rgba(255, 255, 255, 0.15);
+@define-color theme_unfocused_selected_fg_color #ffffff;
+@define-color insensitive_bg_color rgba(0, 0, 0, 0.50);
+@define-color insensitive_base_color rgba(0, 0, 0, 0.50);
+@define-color insensitive_fg_color rgba(255, 255, 255, 0.45);
+@define-color borders rgba(255, 255, 255, 0.08);
+@define-color unfocused_borders rgba(255, 255, 255, 0.06);
+@define-color wm_bg rgba(0, 0, 0, 0.50);
+@define-color wm_unfocused_bg rgba(0, 0, 0, 0.50);
+@define-color content_view_bg rgba(0, 0, 0, 0.50);
+
+/* 3. Global Typography */
+* {
+    font-family: 'Poppins', 'JetBrains Mono Nerd Font', 'MonaspiceNe Nerd Font', sans-serif;
+}
+
+/* Monospace overrides for terminals & code views */
+vte-terminal,
+terminal-screen,
+.monospace,
+textview.monospace {
+    font-family: 'JetBrains Mono Nerd Font', 'MonaspiceNe Nerd Font', monospace;
+}
+
+/* 4. Windows, Dialogs, Message Dialogs & Polkit Authentication (Active & Inactive) */
+window,
+window:backdrop,
+window.background,
+window.background:backdrop,
+.background,
+.background:backdrop,
+messagedialog,
+messagedialog:backdrop,
+dialog,
+dialog:backdrop,
+assistant,
+assistant:backdrop,
+.dialog,
+.dialog:backdrop,
+.message-dialog,
+.message-dialog:backdrop,
+.polkit-dialog,
+.polkit-dialog:backdrop,
+window.dialog,
+window.dialog:backdrop,
+window.messagedialog,
+window.messagedialog:backdrop {
+    background-color: rgba(0, 0, 0, 0.50);
+    background-image: none;
+    color: #ffffff;
+    border: none;
+    box-shadow: none;
+}
+
+/* Reset sub-containers inside Dialogs & Message boxes so no gray/white blocks appear */
+messagedialog box,
+messagedialog box:backdrop,
+messagedialog .dialog-action-area,
+messagedialog .dialog-action-area:backdrop,
+messagedialog .dialog-action-box,
+messagedialog .dialog-action-box:backdrop,
+messagedialog .message-area,
+messagedialog .message-area:backdrop,
+dialog box,
+dialog box:backdrop,
+dialog .dialog-action-area,
+dialog .dialog-action-area:backdrop,
+dialog .dialog-action-box,
+dialog .dialog-action-box:backdrop,
+dialog .dialog-vbox,
+dialog .dialog-vbox:backdrop,
+dialog content,
+dialog content:backdrop,
+.polkit-dialog box,
+.polkit-dialog box:backdrop,
+.polkit-dialog grid,
+.polkit-dialog grid:backdrop,
+infobar,
+infobar:backdrop {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* 5. Top Bars (Headerbars, Titlebars, Menubars, Toolbars, Actionbars) */
+headerbar,
+headerbar:backdrop,
+headerbar.titlebar,
+headerbar.titlebar:backdrop,
+.titlebar,
+.titlebar:backdrop,
+toolbar,
+toolbar:backdrop,
+toolbar.horizontal,
+toolbar.horizontal:backdrop,
+toolbar.vertical,
+toolbar.vertical:backdrop,
+menubar,
+menubar:backdrop,
+.menubar,
+.menubar:backdrop,
+.primary-toolbar,
+.primary-toolbar:backdrop,
+actionbar,
+actionbar:backdrop,
+actionbar > revealer > box,
+actionbar > revealer > box:backdrop {
+    background-color: transparent;
+    background-image: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+    color: #ffffff;
+}
+
+/* 6. Universal Containers, Grids, Panes, Notebooks & Stacks */
+paned,
+paned:backdrop,
+paned > separator,
+paned > separator:backdrop,
+grid,
+grid:backdrop,
+box,
+box:backdrop,
+notebook,
+notebook:backdrop,
+notebook > header,
+notebook > header:backdrop,
+notebook > stack,
+notebook > stack:backdrop,
+stack,
+stack:backdrop,
+frame,
+frame:backdrop,
+frame > border,
+frame > border:backdrop {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* 7. Universal Sidebars (Thunar, File Choosers, Pavucontrol, Blueman) */
+.sidebar,
+.sidebar:backdrop,
+.sidebar .view,
+.sidebar .view:backdrop,
+treeview.sidebar,
+treeview.sidebar:backdrop,
+stacksidebar,
+stacksidebar:backdrop,
+stacksidebar.sidebar,
+stacksidebar.sidebar:backdrop,
+stacksidebar .list,
+stacksidebar .list:backdrop,
+scrolledwindow.sidebar,
+scrolledwindow.sidebar:backdrop,
+scrolledwindow.sidebar > viewport,
+scrolledwindow.sidebar > viewport:backdrop,
+scrolledwindow.sidebar > viewport.frame,
+scrolledwindow.sidebar > viewport.frame:backdrop {
+    background-color: rgba(0, 0, 0, 0.35);
+    background-image: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+}
+
+/* 8. Universal Content Views (Files, Trees, Lists, Text Editors) */
+.view,
+.view:backdrop,
+iconview,
+iconview:backdrop,
+treeview,
+treeview:backdrop,
+treeview.view,
+treeview.view:backdrop,
+textview,
+textview:backdrop,
+textview text,
+textview text:backdrop,
+scrolledwindow,
+scrolledwindow:backdrop,
+viewport,
+viewport:backdrop,
+viewport.frame,
+viewport.frame:backdrop,
+list,
+list:backdrop,
+row,
+row:backdrop {
+    background-color: transparent;
+    background-image: none;
+    color: #ffffff;
+}
+
+/* 9. Rubberband (Multi-select box in Thunar and file pickers) */
+rubberband,
+rubberband:backdrop,
+.rubberband,
+.rubberband:backdrop,
+treeview.view rubberband,
+flowbox rubberband,
+.content-view rubberband {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 6px;
+}
+
+/* 10. Selection & Hover States (Active & Backdrop) */
+.view:hover,
+row:hover,
+iconview:hover,
+treeview:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+}
+
+.view:selected,
+row:selected,
+iconview:selected,
+treeview:selected,
+list > row:selected,
+.view:selected:focus,
+iconview:selected:focus,
+treeview:selected:focus {
+    background-color: rgba(255, 255, 255, 0.20);
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+.view:selected:backdrop,
+row:selected:backdrop,
+iconview:selected:backdrop,
+treeview:selected:backdrop,
+list > row:selected:backdrop {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+/* 11. Buttons */
+button {
+    background-image: none;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+button:backdrop {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #cbd5e1;
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+button:hover * {
+    color: #000000;
+}
+
+button:active,
+button:checked {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+button:active *,
+button:checked * {
+    color: #000000;
+}
+
+/* 12. Text Entries / Searchbars / Inputs */
+entry,
+searchbar entry,
+spinbutton {
+    background-image: none;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 6px 10px;
+    box-shadow: none;
+}
+
+entry:backdrop,
+searchbar entry:backdrop,
+spinbutton:backdrop {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #cbd5e1;
+}
+
+entry:focus,
+searchbar entry:focus {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* 13. Tabs (Pavucontrol, Editors, Browsers, Settings) */
+notebook > header.top > tabs > tab,
+notebook > header.bottom > tabs > tab,
+notebook tab {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 8px 8px 0 0;
+    margin: 0 2px;
+    padding: 6px 12px;
+    border: none;
+    color: #cbd5e1;
+    transition: all 0.2s ease;
+}
+
+notebook > header.top > tabs > tab:backdrop,
+notebook tab:backdrop {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #94a3b8;
+}
+
+notebook > header.top > tabs > tab:hover,
+notebook tab:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+}
+
+notebook > header.top > tabs > tab:checked,
+notebook tab:checked {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 700;
+}
+
+notebook > header.top > tabs > tab:checked:backdrop,
+notebook tab:checked:backdrop {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #000000;
+}
+
+/* 14. Sliders & Progressbars */
+scale trough,
+scale trough:backdrop {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    min-height: 4px;
+    border: none;
+}
+
+scale highlight,
+scale highlight:backdrop {
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+scale slider,
+scale slider:backdrop {
+    background-color: #ffffff;
+    border-radius: 50%;
+    min-width: 14px;
+    min-height: 14px;
+    border: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+progressbar trough,
+progressbar trough:backdrop {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    min-height: 6px;
+    border: none;
+}
+
+progressbar progress,
+progressbar progress:backdrop {
+    background-color: #ffffff;
+    border-radius: 6px;
+    min-height: 6px;
+    border: none;
+}
+
+/* 15. Statusbars */
+statusbar,
+statusbar:backdrop {
+    background-color: rgba(0, 0, 0, 0.35);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    color: #94a3b8;
+}
+
+/* 16. Context Menus, Popovers & Tooltips */
+menu,
+menu:backdrop,
+popover,
+popover:backdrop,
+.popover,
+.popover:backdrop {
+    background-color: rgba(15, 15, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 6px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+}
+
+menu menuitem {
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #ffffff;
+    transition: all 0.15s ease;
+}
+
+menu menuitem:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+tooltip {
+    background-color: rgba(15, 15, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 4px 8px;
+}
+
+/* 17. Thunar & File Chooser Enhancements (Active & Backdrop) */
+ThunarWindow,
+ThunarWindow:backdrop,
+ThunarWindow .standard-view,
+ThunarWindow .standard-view:backdrop,
+ThunarWindow .standard-view .view,
+ThunarWindow .standard-view .view:backdrop,
+ThunarWindow .standard-view scrolledwindow,
+ThunarWindow .standard-view scrolledwindow:backdrop,
+ThunarWindow .sidebar,
+ThunarWindow .sidebar:backdrop,
+ThunarWindow .sidebar .view,
+ThunarWindow .sidebar .view:backdrop,
+ThunarWindow iconview,
+ThunarWindow iconview:backdrop,
+ThunarWindow treeview,
+ThunarWindow treeview:backdrop {
+    background-color: transparent;
+}
+
+ThunarWindow .standard-view .view:selected {
+    background-color: rgba(255, 255, 255, 0.20);
+    color: #ffffff;
+}
+
+ThunarWindow .standard-view .view:selected:backdrop {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+ThunarWindow .path-bar-button,
+ThunarWindow .path-bar button {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+}
+
+ThunarWindow .path-bar-button:backdrop,
+ThunarWindow .path-bar button:backdrop {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #cbd5e1;
+}
+
+ThunarWindow .path-bar-button:hover,
+ThunarWindow .path-bar button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+/* 18. Pavucontrol & Audio */
+#pavucontrol-window,
+#pavucontrol-window:backdrop,
+#pavucontrol-window notebook,
+#pavucontrol-window notebook:backdrop,
+#pavucontrol-window .view,
+#pavucontrol-window .view:backdrop {
+    background-color: transparent;
+}
