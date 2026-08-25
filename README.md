@@ -41,7 +41,6 @@ yay -S --needed mpvpaper ttf-poppins
 4. ¡Cierra tu sesión y vuelve a iniciar seleccionando Hyprland!
 
 ---
-*Diseñado y mantenido por nivek.*
 
 <img width="1920" height="1080" alt="screenshot-20260825-130017" src="https://github.com/user-attachments/assets/ceaa811d-5acf-4ac5-99cb-57efa4c57d2f" />
 <img width="1920" height="1080" alt="screenshot-20260825-130040" src="https://github.com/user-attachments/assets/3829e945-fe01-4dc2-9729-7114590e6c1e" />
