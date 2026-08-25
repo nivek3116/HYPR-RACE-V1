@@ -1,4 +1,3 @@
-<img width="1920" height="1080" alt="screenshot-20260825-130117" src="https://github.com/user-attachments/assets/7d29bb46-34de-42c6-803a-ed3e7e965d97" />
 # HYPR-RACE-V1
 Hola, soy nivek. Soy una persona fascinada con el rice y los tiling window managers.
 
