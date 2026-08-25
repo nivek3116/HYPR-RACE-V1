@@ -1,9 +1,10 @@
+<img width="1920" height="1080" alt="screenshot-20260825-130117" src="https://github.com/user-attachments/assets/7d29bb46-34de-42c6-803a-ed3e7e965d97" />
 # HYPR-RACE-V1
 Hola, soy nivek. Soy una persona fascinada con el rice y los tiling window managers.
 
 He pasado más de medio año creando y probando esta configuración con la idea de ahorrarles el 90% del trabajo pesado y que puedan disfrutar de un entorno hyprland funcional y estético sin sufrir en el proceso. ¡Espero que les guste!
 
-<img width="1920" height="1080" alt="screenshot-20260825-130017" src="https://github.com/user-attachments/assets/ceaa811d-5acf-4ac5-99cb-57efa4c57d2f" />
+<img width="1920" height="1080" alt="screenshot-20260825-130117" src="https://github.com/user-attachments/assets/7d29bb46-34de-42c6-803a-ed3e7e965d97" /> <img width="1920" height="1080" alt="screenshot-20260825-130017" src="https://github.com/user-attachments/assets/ceaa811d-5acf-4ac5-99cb-57efa4c57d2f" />
 
 - **Hyprland:** Gestor de ventanas dinámico con animaciones fluidas y atajos optimizados.
 - **Waybar:** Barra superior avanzada con módulos dinámicos y sub-menús interactivos.
