@@ -1,10 +1,9 @@
-<img width="1920" height="1080" alt="screenshot-20260825-130017" src="https://github.com/user-attachments/assets/ceaa811d-5acf-4ac5-99cb-57efa4c57d2f" />
-<img width="1920" height="1080" alt="screenshot-20260825-130040" src="https://github.com/user-attachments/assets/3829e945-fe01-4dc2-9729-7114590e6c1e" />
-<img width="1920" height="1080" alt="screenshot-20260825-130117" src="https://github.com/user-attachments/assets/842acb58-fa56-4cf0-bfcf-493cac1c99df" />
 # HYPR-RACE-V1
 Hola, soy nivek. Soy una persona fascinada con el rice y los tiling window managers.
 
 He pasado más de medio año creando y probando esta configuración con la idea de ahorrarles el 90% del trabajo pesado y que puedan disfrutar de un entorno hyprland funcional y estético sin sufrir en el proceso. ¡Espero que les guste!
+
+<img width="1920" height="1080" alt="screenshot-20260825-130017" src="https://github.com/user-attachments/assets/ceaa811d-5acf-4ac5-99cb-57efa4c57d2f" />
 
 - **Hyprland:** Gestor de ventanas dinámico con animaciones fluidas y atajos optimizados.
 - **Waybar:** Barra superior avanzada con módulos dinámicos y sub-menús interactivos.
@@ -12,6 +11,9 @@ He pasado más de medio año creando y probando esta configuración con la idea 
 - **Rofi (Wayland):** Lanzador de aplicaciones moderno y menú de escritorio.
 - **Selector de Fondos Inteligente:** Script minimalista con transiciones suaves para fondos estáticos y animados.
 - **Herramientas a medida:** Grabador de pantalla, alertas de batería al vuelo y gestión inteligente de energía.
+
+
+<img width="1920" height="1080" alt="screenshot-20260825-130040" src="https://github.com/user-attachments/assets/3829e945-fe01-4dc2-9729-7114590e6c1e" />
 
 ## 📦 Requisitos Previos
 
